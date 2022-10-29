@@ -1,16 +1,17 @@
 fun main(args: Array<String>) {
-    val car1 = Car("Tesla", "S Plaid", "Red", 4)
-    car1.move()
-    println("Name = ${car1.name}")
+    val user = User("lex", "Dobinica", 23)
+    println("Name: ${user.name}")
 }
 
-class Car(var name: String, var model: String, var color: String, var doors: Int) {
+class User(name: String, var lastName: String, var age: Int) {
+    var name: String
 
-    fun move() {
-        println("The car is moving")
-    }
-
-    fun stop() {
-        println("The car has stopped")
+    init {
+        if (name.lowercase().startsWith("a")){
+            this.name = name
+        } else {
+            this.name = "User"
+            println("The name doesn't start with the letter 'a' or 'A'")
+        }
     }
 }
