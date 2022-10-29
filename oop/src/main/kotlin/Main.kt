@@ -1,11 +1,19 @@
-fun main(args: Array<String>) {
-    val user = User("Alex", "Dobinica", 23)
-    val user2 = User(name = "Alex")
-    val user3 = User("Alex", "Smith")
-
-    println(user.isAdult)
+fun main() {
+    val sum = Calculator.sum(Calculator.max,9)
+    println(sum)
+    val cal = Calculator()
+    println(cal.sumWithMax(4))
 }
 
-class User(var name: String, var lastName: String = "LastName", var age: Int = 0) {
-    val isAdult get() = this.age > 20
+class Calculator() {
+    companion object {
+        var max = 10
+        fun sum(a: Int, b: Int): Int {
+        return a + b
+        }
+    }
+
+    fun sumWithMax(a: Int): Int {
+        return max + a
+    }
 }
