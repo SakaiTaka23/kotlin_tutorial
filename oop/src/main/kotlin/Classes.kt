@@ -10,7 +10,28 @@ class Car(name: String, var model: String, var color: String, var doors: Int) {
     }
 }
 
-class User(var name: String, var lastName: String, var age: Int) {
-    lateinit var favoriteMovie: String
+class Calculator() {
+    companion object {
+        var max = 10
+        fun sum(a: Int, b: Int): Int {
+            return a + b
+        }
+    }
 
+    fun sumWithMax(a: Int): Int {
+        return max + a
+    }
+}
+
+object Database {
+    init {
+        println("Database created")
+    }
+}
+
+class User(var firstname: String, var lastName: String, var age: Int) {
+    lateinit var favoriteMovie: String
+    init {
+        println("User: $firstname was created")
+    }
 }
