@@ -126,4 +126,6 @@ structural equality と referential equality
 - コンストラクタは持てない
 - 継承と同じ方式で実装を指定
 
+# object expression
+- objectキーを入れることで匿名的にその場でインターフェースを実装することができる
 
