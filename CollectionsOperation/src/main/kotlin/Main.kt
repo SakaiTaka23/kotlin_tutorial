@@ -1,3 +1,3 @@
 fun main() {
-    learnFlatten()
+    learnStringRepresentation()
 }

@@ -20,3 +20,6 @@
 # Flatten
 - 2次元配列を一次元にする
 - flatten関数を利用
+
+# String Representation
+- 配列の出力を任意の区切りで作成したり文字と結合したりできる
