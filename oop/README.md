@@ -129,3 +129,6 @@ structural equality と referential equality
 # object expression
 - objectキーを入れることで匿名的にその場でインターフェースを実装することができる
 
+# Delegation
+- 多重継承について
+- インターフェース by クラスと言った感じで継承できそう
