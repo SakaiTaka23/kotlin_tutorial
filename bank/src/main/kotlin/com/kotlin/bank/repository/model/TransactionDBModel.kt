@@ -1,4 +1,4 @@
-package com.kotlin.bank.controller.repository.model
+package com.kotlin.bank.repository.model
 
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
@@ -9,7 +9,7 @@ import java.util.UUID
 @Entity
 class TransactionDBModel (
     val accountIdentifier: String,
-    val value: Double,
+    val amount: Double,
     val description: String = "",
 ) {
     @Id
