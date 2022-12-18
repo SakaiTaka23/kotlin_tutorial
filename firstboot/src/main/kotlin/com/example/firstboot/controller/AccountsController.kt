@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
+import javax.swing.text.View
 
 data class CreateAccount(
     val name: String,
@@ -25,6 +27,16 @@ class AccountsController(val repository: AccountRepository) {
     @GetMapping("/find")
     fun findAll(): Iterable<ViewAccount> {
         return repository.findAll().map { it.toView() }
+    }
+
+    @GetMapping("/start")
+    fun searchStart(@RequestParam(name = "prefix") prefix: String): Iterable<ViewAccount> {
+        return repository.findByNameStartingWith(prefix).map { it.toView() }
+    }
+
+    @GetMapping("/end")
+    fun searchEnd(@RequestParam(name = "sufix") sufix: String): Iterable<ViewAccount> {
+        return repository.search(sufix).map { it.toView() }
     }
 
     @PostMapping("")
