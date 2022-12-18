@@ -72,3 +72,30 @@
 - SLF4J自体が2つのロガーが同時にインストールされていることを許さないため使用するにはデフォルトのlogbackを削除してからインストールする必要がある
 - ここのガイドを元に進めていく
   - https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto.logging.log4j
+
+## Database
+### 必要な依存パッケージ
+- Spring Data JPA→データ永続化周りのパッケージ
+- MySQL Driver
+- Liquibase migration→データベースマイグレーションを管理するパッケージ
+
+### 設定
+- プロパティファイルに設定を記述していく
+- 用途に応じて環境変数として定義すること
+- liquibaseに関してはクイックスタートから設定を持ってきた
+  - https://www.liquibase.org/get-started/quickstart
+
+### liquibase
+- 起動時に2つのてテーブルを作る
+1. DATABASECHANGELOG → どう言ったマイグレーションが行われたかを記録
+2. DATABASECHANGELOGLOCK → 同時にマイグレートすると言ったことを防ぐ
+
+### テーブル追加
+- 定義したlog.xmlに対してテーブルを定義していく
+- プログラム実行時に自動的にテーブルが作られる
+
+### モデル定義
+- `Entity`アノテーションをつけておくこと
+- テーブルと同じような名前のデータクラスを作成する
+- カラムと同じ要素のデータを入れること
+- idについて0のまんまにしておくと自動的に新しいものが作られる
