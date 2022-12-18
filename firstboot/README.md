@@ -61,3 +61,14 @@
   - 設定は`logging.level.root`で変えることができる
   - このroot部は変更することによって自分のアプリケーションにのみと言ったこともできる
 - もちろんログに対して引数を与えることもできる
+
+### カスタム
+- ファイルを作成してさらに細かくカスタマイズすることもできる
+  - https://spring.pleiades.io/spring-boot/docs/2.1.3.RELEASE/reference/html/boot-features-logging.html#boot-features-custom-log-configuration
+- xmlを使ってカスタムを記述していく
+- カスタムの記述は使用しているロガーの公式サイトを元に行う
+
+### Log4j2への切り替え
+- SLF4J自体が2つのロガーが同時にインストールされていることを許さないため使用するにはデフォルトのlogbackを削除してからインストールする必要がある
+- ここのガイドを元に進めていく
+  - https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto.logging.log4j
