@@ -4,7 +4,7 @@ import jakarta.persistence.*
 import org.springframework.data.repository.CrudRepository
 
 @Entity
-class Student (
+data class Student (
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long = 0,
