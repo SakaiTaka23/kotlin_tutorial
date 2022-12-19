@@ -4,22 +4,24 @@ import com.example.firstboot.model.Account
 import com.example.firstboot.model.AccountRepository
 import com.example.firstboot.model.ViewAccount
 import com.example.firstboot.model.toView
+import jakarta.validation.Valid
+import jakarta.validation.constraints.Size
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
-import javax.swing.text.View
 
 data class CreateAccount(
+    @field:Size(min = 2, max = 5)
     val name: String,
 )
 
 @RestController
 @RequestMapping("/accounts")
 class AccountsController(val repository: AccountRepository) {
-    @GetMapping("")
+    @GetMapping
     fun getAll(): Iterable<ViewAccount> {
         return listOf(ViewAccount(1, "alex"))
     }
@@ -39,12 +41,17 @@ class AccountsController(val repository: AccountRepository) {
         return repository.search(sufix).map { it.toView() }
     }
 
-    @PostMapping("")
+    @PostMapping
     fun create(@RequestBody request: CreateAccount): ViewAccount {
          return repository.save(
             Account(
                 name = request.name
             )
         ).toView()
+    }
+
+    @PostMapping("/valid")
+    fun valid(@Valid @RequestBody request: CreateAccount): ViewAccount {
+        return ViewAccount(id = 2, name = request.name)
     }
 }
