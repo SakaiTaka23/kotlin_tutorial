@@ -35,13 +35,15 @@ interface CourseRepository: CrudRepository<Course, Long>
 data class ViewStudent (
     val id: Long,
     val name: String,
+    val coursesEnrolledIn: Iterable<String>
 )
 
-fun Student.toView() = ViewStudent(id, name)
+fun Student.toView() = ViewStudent(id, name, enrolledIn.map { it.name })
 
 data class ViewCourse(
     val id: Long,
     val name: String,
+    val student: Iterable<String>
 )
 
-fun Course.toView() = ViewCourse(id, name)
+fun Course.toView() = ViewCourse(id, name, studentsEnrolledIn.map { it.name })
