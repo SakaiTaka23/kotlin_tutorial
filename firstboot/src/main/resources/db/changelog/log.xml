@@ -14,6 +14,42 @@
             </column>
         </createTable>
     </changeSet>
+
+    <changeSet id="2" author="SakaiTaka23">
+        <createTable tableName="student">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <insert tableName="student">
+            <column name="name" value="Alice"/>
+        </insert>
+        <insert tableName="student">
+            <column name="name" value="Bob"/>
+        </insert>
+        <insert tableName="student">
+            <column name="name" value="Charlie"/>
+        </insert>
+
+        <createTable tableName="course">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <insert tableName="course">
+            <column name="name" value="Math"/>
+        </insert>
+        <insert tableName="course">
+            <column name="name" value="Biology"/>
+        </insert>
+
+    </changeSet>
 </databaseChangeLog>
-
-
