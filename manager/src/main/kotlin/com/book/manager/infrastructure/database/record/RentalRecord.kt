@@ -8,6 +8,6 @@ import java.time.LocalDateTime
 data class RentalRecord(
     var bookId: Long? = null,
     var userId: Long? = null,
-    var rentalDate: LocalDateTime? = null,
+    var rentalDatetime: LocalDateTime? = null,
     var returnDeadline: LocalDateTime? = null
 )

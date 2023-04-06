@@ -13,7 +13,7 @@ object RentalDynamicSqlSupport {
 
         val userId = column<Long>("user_id", JDBCType.BIGINT)
 
-        val rentalDate = column<LocalDateTime>("rental_date", JDBCType.TIMESTAMP)
+        val rentalDatetime = column<LocalDateTime>("rental_datetime", JDBCType.TIMESTAMP)
 
         val returnDeadline = column<LocalDateTime>("return_deadline", JDBCType.TIMESTAMP)
     }
