@@ -1,9 +1,11 @@
 # O/Rマッパーを使用してデータベースへ接続する
 
 ## ORM
+
 - MyBatis, JPAあたりがメジャー
 
 ## 導入
+
 - mybatis, mysql-connector-javaがmybatis, mysqlを繋げるライブラリ
 - dynamic-sql, mybatis-generator-coreがコード生成を行うもの
 
@@ -16,11 +18,26 @@
 enum型は文字列として認識されてしまうのでカラムのオーバーライドを行うことによって書き換えるようにする
 
 ## 生成されるファイル
+
 全てテーブル名が先に付いている
+
 - Record → テーブルを表したモデル
 - DynamicSqlSupport → Mapperを使用するクエリのカラム指定のパラメーターが記述されている
-- Mapper → 基本的なクエリ発行の関数が定義されたインターフェース
+- Mapper → 基本的なクエリ発行の関数が定義されたインターフェース(クエリの結果のどのカラムがどれに該当するのかを表したもの)
 - MapperExtensions → Mapperの関数の定義
 
 ## アプリケーション設定
+
 - 設定はapplication.propertiesで行うことができるが最近はymlを使うことが多いので`application.yml`という名前に変更して記述する
+
+## 関数の拡張
+
+- 関数を拡張する場合はMapper, MapperExtensions, Recordを定義する必要がある
+- Mapper → どのような関数を作るのか・その時の結果のマッピングはどういった感じになるのか(マッピングは他のものと結果が同じの場合idだけで良い)
+- MapperExtensions → その実装
+
+**kotlin関係**
+
+- 一時的に使うだけの変数はクラスのフィールド名を差別化するため変数名の最初に_をつけると良い
+- if (hoge != null)で処理をする場合はletと組み合わせる
+- if (hoge == null)で処理をする場合はエルビス演算子:?を使う
