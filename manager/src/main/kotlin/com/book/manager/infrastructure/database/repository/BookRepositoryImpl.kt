@@ -16,7 +16,6 @@ import com.book.manager.infrastructure.database.record.BookWithRentalRecord
 import java.time.LocalDate
 import org.springframework.stereotype.Repository
 
-@Suppress("SpringJavaInjectionPointsAutowiringInspection")
 @Repository
 class BookRepositoryImpl(
     private val bookWithRentalMapper: BookWithRentalMapper,
