@@ -3,5 +3,5 @@ export const client = createClient()
 function createClient () {
   const Axios = require('axios')
 
-  return Axios.create()
+  return Axios.create({ withCredentials: true })
 }
