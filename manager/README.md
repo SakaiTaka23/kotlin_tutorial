@@ -84,3 +84,8 @@ enum型は文字列として認識されてしまうのでカラムのオーバ�
 
 https://docs.gradle.org/current/userguide/dependency_downgrade_and_exclude.html#sec:strict-version-consequences
 https://kkoudev.github.io/blog/2014/03/30/gradle-tips/
+
+## セッション管理
+
+- `@EnableRedisHttpSession`を使うことによってセッションがSpringのインメモリからRedisに保存するようにすることができる
+- 中にRedisの接続情報を入れるだけで良さそう

@@ -28,6 +28,9 @@ dependencies {
     mybatisGenerator("org.mybatis.generator:mybatis-generator-core:1.4.0")
 
     implementation("org.springframework.boot:spring-boot-starter-security")
+
+    implementation("org.springframework.session:spring-session-data-redis")
+    implementation("redis.clients:jedis")
 }
 
 tasks.withType<KotlinCompile> {

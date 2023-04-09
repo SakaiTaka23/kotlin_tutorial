@@ -14,3 +14,7 @@ services:
       - '3306:3306'
     volumes:
       - ./db:/etc/mysql/conf.d
+  redis:
+    image: redis:7.0
+    ports:
+      - '6379:6379'
