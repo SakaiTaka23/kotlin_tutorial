@@ -27,7 +27,7 @@ dependencies {
     implementation("mysql:mysql-connector-java:8.0.28")
     mybatisGenerator("org.mybatis.generator:mybatis-generator-core:1.4.0")
 
-    implementation("org.springframework.boot:spring-boot-starter-security:2.7.10")
+    implementation("org.springframework.boot:spring-boot-starter-security")
 }
 
 tasks.withType<KotlinCompile> {

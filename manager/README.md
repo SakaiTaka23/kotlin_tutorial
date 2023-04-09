@@ -75,3 +75,12 @@ enum型は文字列として認識されてしまうのでカラムのオーバ�
     - 未認証の場合
     - 認可に失敗した場合
 
+## Gradleのバージョン周り
+
+- 複数のライブラリが特定のライブラリに依存している場合バージョンが高い方に統一されてしまう
+- 記述しているライブラリと違うバージョンのライブラリがインストールされてしまう可能性がある
+- 自力でバージョン解決をするか使っていないものをインストールされているものを整理したりする？
+    - 強制的にバージョンを固定する方法もありそう？
+
+https://docs.gradle.org/current/userguide/dependency_downgrade_and_exclude.html#sec:strict-version-consequences
+https://kkoudev.github.io/blog/2014/03/30/gradle-tips/
