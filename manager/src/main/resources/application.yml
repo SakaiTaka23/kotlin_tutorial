@@ -3,6 +3,6 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/book_manager?characterEncoding=utf8
     username: root
     password: abc123
-    driverClassName: com.mysql.jdbc.Driver
+    driverClassName: com.mysql.cj.jdbc.Driver
   jackson:
     property-naming-strategy: SNAKE_CASE
