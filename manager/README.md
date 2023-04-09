@@ -93,3 +93,18 @@ https://kkoudev.github.io/blog/2014/03/30/gradle-tips/
 
 - `@EnableRedisHttpSession`を使うことによってセッションがSpringのインメモリからRedisに保存するようにすることができる
 - 中にRedisの接続情報を入れるだけで良さそう
+
+# Spring AOP
+
+- AOP → ロギングのように様々なオブジェクトを切り出し各オブジェクトから直接呼び出さず実行される共通処理として定義するプログラミングパラダイム
+- Spring AOP → AOPを実現するライブラリ
+- AOPにおいてAdviceは横断的関心ごとの処理を定義するものを指す
+
+## 処理タイミング
+
+- 処理タイミングはアノテーションで定義できる
+
+- Before, After → 特定の処理の前後
+- Around → Before, Afterを一つのアノテーションで定義
+- AfterReturning → 戻り値を取得して処理
+- AfterThrowing → 例外が発生した時
