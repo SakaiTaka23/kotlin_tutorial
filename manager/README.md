@@ -108,3 +108,13 @@ https://kkoudev.github.io/blog/2014/03/30/gradle-tips/
 - Around → Before, Afterを一つのアノテーションで定義
 - AfterReturning → 戻り値を取得して処理
 - AfterThrowing → 例外が発生した時
+
+# JUnitでの単体テスト
+
+- インストール時に`testImplementation`をつけたものはtestパッケージ内でのみ使用可能(mainでは使用できない)
+- テストはテストパッケージ内とmainパッケージ名の場所が同じ名前になるようにするのが良い→同じパッケージのクラスとして扱われimportの記述が不要となる
+- `Test`アノテーションを付けた場合のみテストとして認識される
+
+- 帰ってきた値が正しいか
+- 関数に対して意図した引数で実行されているか
+- 特定の関数の呼び出し回数は何回か
