@@ -1,5 +1,6 @@
 package com.example.plugins
 
+import com.example.routes.bookRoute
 import com.example.routes.greetingRoute
 import com.example.routes.userRoute
 import io.ktor.server.application.Application
@@ -23,5 +24,6 @@ fun Application.configureRouting() {
         }
         greetingRoute()
         userRoute()
+        bookRoute()
     }
 }
