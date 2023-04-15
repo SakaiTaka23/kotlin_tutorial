@@ -1,3 +1,0 @@
-complexity:
-  excludes: [ '**/infrastructure/database/mapper/**', '**/infrastructure/database/record/**' ]
-  includes: [ '**/infrastructure/database/mapper/BookWithRentalMapperExtentions.kt', '**/infrastructure/database/record/BookWithRentalRecord.kt' ]

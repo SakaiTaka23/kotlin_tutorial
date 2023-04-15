@@ -41,8 +41,7 @@ interface UserMapper {
 
     @SelectProvider(type = SqlProviderAdapter::class, method = "select")
     @Results(
-        id = "UserRecordResult",
-        value = [
+        id = "UserRecordResult", value = [
             Result(column = "id", property = "id", jdbcType = JdbcType.BIGINT, id = true),
             Result(column = "email", property = "email", jdbcType = JdbcType.VARCHAR),
             Result(column = "password", property = "password", jdbcType = JdbcType.VARCHAR),

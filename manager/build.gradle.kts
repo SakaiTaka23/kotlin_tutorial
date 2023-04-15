@@ -60,8 +60,14 @@ mybatisGenerator {
 }
 
 detekt {
-    config = files("$projectDir/src/main/resources/detekt.yml")
     source = files(".")
     autoCorrect = true
     buildUponDefaultConfig = true
+}
+
+tasks.withType<io.gitlab.arturbosch.detekt.Detekt>().configureEach {
+    exclude("**/infrastructure/database/mapper/**")
+    exclude("**/infrastructure/database/record/**")
+    include("**/infrastructure/database/mapper/BookWithRentalMapperExtentions.kt")
+    include("**/infrastructure/database/record/BookWithRentalRecord.kt")
 }

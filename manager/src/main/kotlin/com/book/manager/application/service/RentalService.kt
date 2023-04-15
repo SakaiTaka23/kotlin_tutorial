@@ -22,7 +22,7 @@ class RentalService(
         val book = bookRepository.findWithRental(bookId)
             ?: throw IllegalArgumentException("該当する書籍が存在しません bookId: $bookId")
 
-        if (book.isRental) throw IllegalArgumentException("貸出中の商品です bookId: $bookId")
+        require(book.isRental) { "貸出中の商品です bookId: $bookId" }
 
         val rentalDateTime = LocalDateTime.now()
         val returnDeadLine = rentalDateTime.plusDays(RENTAL_TERM_DAYS)
@@ -37,8 +37,8 @@ class RentalService(
         val book = bookRepository.findWithRental(bookId)
             ?: throw IllegalArgumentException("該当する書籍が存在しません bookId: $bookId")
 
-        if (!book.isRental) throw IllegalStateException("未貸出の商品です bookId: $bookId")
-        if (book.rental!!.userId != userId) throw IllegalStateException("他のユーザーが貸出中の商品です userId: $userId bookId")
+        check(!book.isRental) { "未貸出の商品です bookId: $bookId" }
+        check(book.rental!!.userId != userId) { "他のユーザーが貸出中の商品です userId: $userId bookId" }
 
         rentalRepository.endRental(bookId)
     }

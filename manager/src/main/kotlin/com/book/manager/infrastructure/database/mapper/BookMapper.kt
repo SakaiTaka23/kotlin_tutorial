@@ -40,8 +40,7 @@ interface BookMapper {
 
     @SelectProvider(type = SqlProviderAdapter::class, method = "select")
     @Results(
-        id = "BookRecordResult",
-        value = [
+        id = "BookRecordResult", value = [
             Result(column = "id", property = "id", jdbcType = JdbcType.BIGINT, id = true),
             Result(column = "title", property = "title", jdbcType = JdbcType.VARCHAR),
             Result(column = "author", property = "author", jdbcType = JdbcType.VARCHAR),

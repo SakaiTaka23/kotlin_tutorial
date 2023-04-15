@@ -40,8 +40,7 @@ interface RentalMapper {
 
     @SelectProvider(type = SqlProviderAdapter::class, method = "select")
     @Results(
-        id = "RentalRecordResult",
-        value = [
+        id = "RentalRecordResult", value = [
             Result(column = "book_id", property = "bookId", jdbcType = JdbcType.BIGINT, id = true),
             Result(column = "user_id", property = "userId", jdbcType = JdbcType.BIGINT),
             Result(column = "rental_datetime", property = "rentalDatetime", jdbcType = JdbcType.TIMESTAMP),
