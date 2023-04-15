@@ -47,7 +47,6 @@ data class RentalInfo(
         rental.rentalDatetime,
         rental.returnDeadline
     )
-
 }
 
 data class RegisterBookRequest(

@@ -53,5 +53,4 @@ data class BookManagerUserDetails(
     override fun isEnabled(): Boolean {
         return true
     }
-
 }

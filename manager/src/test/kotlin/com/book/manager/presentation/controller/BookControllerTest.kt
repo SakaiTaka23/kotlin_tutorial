@@ -24,7 +24,7 @@ internal class BookControllerTest {
     @Test
     fun `getList is success`() {
         val bookId = 100L
-        val book = Book(1, "Kotlin入門", "コトリン太郎", LocalDate.now())
+        val book = Book(bookId, "Kotlin入門", "コトリン太郎", LocalDate.now())
         val bookList = listOf(BookWithRental(book, null))
 
         whenever(bookService.getList()).thenReturn(bookList)

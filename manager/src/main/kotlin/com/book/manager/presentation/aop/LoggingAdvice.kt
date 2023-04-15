@@ -25,7 +25,9 @@ class LoggingAdvice {
         val user = SecurityContextHolder.getContext().authentication.principal as BookManagerUserDetails
         logger.info("Start: ${joinPoint.signature} userId = ${user.id}")
         logger.info("Class: ${joinPoint.target.javaClass}")
-        logger.info("Session: ${(RequestContextHolder.getRequestAttributes() as ServletRequestAttributes).request.session.id}")
+        logger.info(
+            "Session: ${(RequestContextHolder.getRequestAttributes() as ServletRequestAttributes).request.session.id}"
+        )
     }
 
     @After("execution(* com.book.manager.presentation.controller..*.*(..))")

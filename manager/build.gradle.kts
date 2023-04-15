@@ -4,6 +4,7 @@ plugins {
     id("org.springframework.boot") version "3.0.5"
     id("io.spring.dependency-management") version "1.1.0"
     id("com.qqviaja.gradle.MybatisGenerator") version "2.5"
+    id("io.gitlab.arturbosch.detekt") version "1.22.0"
     kotlin("jvm") version "1.7.22"
     kotlin("plugin.spring") version "1.7.22"
 }
@@ -34,6 +35,8 @@ dependencies {
 
     implementation("org.springframework.boot:spring-boot-starter-aop")
 
+    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.22.0")
+
     testImplementation("org.junit.jupiter:junit-jupiter-engine:5.7.1")
     testImplementation("org.assertj:assertj-core:3.19.0")
     testImplementation("org.mockito:mockito-core:3.8.0")
@@ -53,5 +56,12 @@ tasks.withType<Test> {
 
 mybatisGenerator {
     verbose = true
-    configFile = "${projectDir}/src/main/resources/generatorConfig.xml"
+    configFile = "$projectDir/src/main/resources/generatorConfig.xml"
+}
+
+detekt {
+    config = files("$projectDir/src/main/resources/detekt.yml")
+    source = files(".")
+    autoCorrect = true
+    buildUponDefaultConfig = true
 }
