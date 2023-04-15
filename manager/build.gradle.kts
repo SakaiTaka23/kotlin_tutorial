@@ -68,6 +68,6 @@ detekt {
 tasks.withType<io.gitlab.arturbosch.detekt.Detekt>().configureEach {
     exclude("**/infrastructure/database/mapper/**")
     exclude("**/infrastructure/database/record/**")
-    include("**/infrastructure/database/mapper/BookWithRentalMapperExtentions.kt")
+    include("**/infrastructure/database/mapper/BookWithRentalMapperExtensions.kt")
     include("**/infrastructure/database/record/BookWithRentalRecord.kt")
 }
