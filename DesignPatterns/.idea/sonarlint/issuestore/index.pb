@@ -15,3 +15,17 @@ U
 %src/test/kotlin/LazyInitialization.kt,b/0/b0b5fde781e5935cf8d0ed99786925056e4d813f
 L
 src/test/kotlin/Prototype.kt,2/3/23e4a7448490a17e75aef1b888e87a278b8866a5
+J
+src/test/kotlin/Adapter.kt,5/0/50e7ce4d47d8d5f584d655c3a0948bd435898374
+I
+src/test/kotlin/Bridge.kt,7/b/7b0bba9f6a502193b4aeffe40a162b77b0527ee1
+I
+src/test/kotlin/Facade.kt,a/5/a55180cdac4d280a1cb2ef2241f6db5f3e798674
+L
+src/test/kotlin/Decorator.kt,7/2/723c83ac3db4539b59742554324c80bdaa99b8d0
+P
+ src/test/kotlin/CoffeeMachine.kt,a/2/a224cabd044f995944ecefc6d8e7032780519814
+L
+src/test/kotlin/Composite.kt,d/a/da510d5c4934cfc200759342223da0790592b755
+H
+src/test/kotlin/Proxy.kt,b/7/b7a823b917ddbf8a8195d97b4b02e558b70dfc79
